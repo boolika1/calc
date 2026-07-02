@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> phone calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="calc">
+            <form name="f" id="form">
+                <input type="text" name="d" id="ipt">
+                <br>
+                <input type="button" class="act" value="AC" onclick="f.d.value=''">
+                <input type="button" class="act" value="%" onclick="mod()">
+                <input type="button" class="act" value="⌫" onclick="del()">
+                <input type="button" class="act" value="÷" onclick="div()">
+                <br>
+                <input type="button" id="btn" value="7" onclick="f.d.value+=7">
+                <input type="button" id="btn" value="8" onclick="f.d.value+=8">
+                <input type="button" id="btn" value="9" onclick="f.d.value+=9">
+                <input type="button" class="act" value="x" onclick="mul()">
+                <br>
+                <input type="button" id="btn" value="4" onclick="f.d.value+=4">
+                <input type="button" id="btn" value="5" onclick="f.d.value+=5">
+                <input type="button" id="btn" value="6" onclick="f.d.value+=6">
+                <input type="button" class="act" value="ــ" onclick="sub()">
+                <br>
+                <input type="button" id="btn" value="1" onclick="f.d.value+=1">
+                <input type="button" id="btn" value="2" onclick="f.d.value+=2">
+                <input type="button" id="btn" value="3" onclick="f.d.value+=3">
+                <input type="button" class="act" value="+" onclick="add()">
+                <br>
+                <input type="button" id="btn" value="00" onclick="f.d.value+='00'">
+                <input type="button" id="btn" value="0" onclick="f.d.value+=0">
+                <input type="button" id="btn" value="." onclick="dot()">
+                <input type="button" class="act" value="=" onclick="f.d.value=eval(f.d.value)"
+                    style="background-color: rgba(127, 244, 255, 0.752);">
+            </form>
+        </div>
+    </div>
+    <script src="./calc.js"></script>
+</body>
+
+</html>

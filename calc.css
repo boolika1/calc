@@ -1,0 +1,62 @@
+#main{
+            color: #ffffff;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 5px;
+        }
+        #calc {
+            background-color: #17171c; /* الرمادي الغامق جداً لجسم التطبيق */
+            width: 360px;
+            padding: 24px;
+            border-radius: 32px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+        #btn {
+            border: none;
+            outline: none;
+            margin: 5px;
+            height: 72px;
+            width: 72px;
+            border-radius: 50%; /* لجعل الزر دائرياً تماماً */
+            font-size: 26px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background-color 0.1s ease, transform 0.05s ease;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            background-color: #232325; /* رمادي كلاسيكي للأرقام */
+            color: #ffffff;
+        }
+        .act{
+            border: none;
+            outline: none;
+            height: 72px;
+            width: 72px;
+            box-shadow: 0px 0px 15px rgb(100, 222, 255);
+            background-color: rgba(125, 205, 255, 0.441)rgba(130, 207, 255, 0.356);
+            border-radius: 50%;
+            margin: 5px;
+            font-size: 26px;
+            font-weight: 400;
+        } 
+        #btn:active {
+            transform: scale(0.95);
+            opacity: 0.85;
+        }
+        .act:active{
+            transform: scale(0.95);
+            opacity: 0.85;
+        }
+
+        #ipt {
+            border: none;
+            width: 100%;
+            height: 130px;
+            font-size: 80px;
+        }
