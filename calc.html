@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> phone calculator</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="calc">
+            <form name="f"  id="form">
+                <input type="text" name="d" id="ipt">
+                <br>
+                <input type="button" class="act"   value="AC" onclick="f.d.value=''">
+                <input type="button" class="act"   value="%" onclick="mod()">
+                <input type="button" class="act"   value="⌫" onclick="del()">
+                <input type="button" class="act"   value="÷" onclick="div()">
+                <br>
+                <input type="button" id="btn" value="7" onclick="f.d.value+=7">
+                <input type="button" id="btn" value="8" onclick="f.d.value+=8">
+                <input type="button" id="btn" value="9" onclick="f.d.value+=9">
+                <input type="button" class="act"   value="x" onclick="mul()">
+                <br>
+                <input type="button" id="btn" value="4" onclick="f.d.value+=4">
+                <input type="button" id="btn" value="5" onclick="f.d.value+=5">
+                <input type="button" id="btn" value="6" onclick="f.d.value+=6">
+                <input type="button" class="act"   value="ــ" onclick="sub()" >
+                <br>
+                <input type="button" id="btn" value="1" onclick="f.d.value+=1">
+                <input type="button" id="btn" value="2" onclick="f.d.value+=2">
+                <input type="button" id="btn" value="3" onclick="f.d.value+=3">
+                <input type="button" class="act"   value="+" onclick="add()">
+                <br>
+                <input type="button" id="btn" value="00" onclick="f.d.value+='00'">
+                <input type="button" id="btn" value="0" onclick="f.d.value+=0">
+                <input type="button" id="btn" value="." onclick="dot()">
+                <input type="button" class="act"   value="=" onclick="f.d.value=eval(f.d.value)" style="background-color: rgba(127, 244, 255, 0.752);">
+            </form>
+        </div>
+    </div>
+    <style>
+        #main{
+            color: #ffffff;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 5px;
+        }
+        #calc {
+            background-color: #17171c; /* الرمادي الغامق جداً لجسم التطبيق */
+            width: 360px;
+            padding: 24px;
+            border-radius: 32px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+        #btn {
+            border: none;
+            outline: none;
+            margin: 5px;
+            height: 72px;
+            width: 72px;
+            border-radius: 50%; /* لجعل الزر دائرياً تماماً */
+            font-size: 26px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background-color 0.1s ease, transform 0.05s ease;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            background-color: #232325; /* رمادي كلاسيكي للأرقام */
+            color: #ffffff;
+        }
+        .act{
+            border: none;
+            outline: none;
+            height: 72px;
+            width: 72px;
+            box-shadow: 0px 0px 15px rgb(100, 222, 255);
+            background-color: rgba(125, 205, 255, 0.441)rgba(130, 207, 255, 0.356);
+            border-radius: 50%;
+            margin: 5px;
+            font-size: 26px;
+            font-weight: 400;
+        } 
+        #btn:active {
+            transform: scale(0.95);
+            opacity: 0.85;
+        }
+        .act:active{
+            transform: scale(0.95);
+            opacity: 0.85;
+        }
+
+        #ipt {
+            border: none;
+            width: 100%;
+            height: 130px;
+            font-size: 80px;
+        }
+    </style>
+    <script>
+        function add() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*'|| b == '%'|| b == '.') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '+'
+            } else {
+                f.d.value += '+'
+            }
+        }
+        function dot() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*'|| b == '%'|| b == '.') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '.'
+            } else {
+                f.d.value += '.'
+            }
+        }
+        function mod() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*'|| b == '%'|| b == '.') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '%'
+            } else {
+                f.d.value += '%'
+            }
+        }
+        function sub() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '-'
+            } else {
+                f.d.value += '-'
+            }
+        }
+        function div() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '/'
+            } else {
+                f.d.value += '/'
+            }
+        }
+        function mul() {
+            let act = 0, b = 0
+            act = f.d.value
+            b = act.charAt(act.length - 1)
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.d.value = act.substring(0, act.length - 1)
+                f.d.value += '*'
+            } else {
+                f.d.value += '*'
+            }
+        }
+        function del(){
+            let del = f.d.value
+            del = del.slice(0, -1);
+            f.d.value = del
+        }
+    </script>
+</body> 
+</html>
